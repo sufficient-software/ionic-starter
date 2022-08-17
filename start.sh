@@ -18,6 +18,7 @@ cd ./$DIRNAME
 
 npm run build
 npx @ionic/cli cap add ios
+npx @ionic/cli cap add android
 
 
 mkdir fastlane
@@ -1291,3 +1292,6 @@ describe("App Loads", () => {
   });
 });
 TEST_APP_SPEC
+
+npx --yes npm-add-script -k "e2e:ios" -v "npx @ionic/cli cap sync ios; bundle exec fastlane ios test; TS_NODE_PROJECT=./test/tsconfig.json npx @wdio/cli test/config/wdio.ios.config.ts"
+npx --yes npm-add-script -k "e2e:android" -v "npx @ionic/cli cap sync android; bundle exec fastlane android test; TS_NODE_PROJECT=./test/tsconfig.json npx @wdio/cli test/config/wdio.android.config.ts"
