@@ -64,8 +64,7 @@ gem "cocoapods"
 GEMFILE
 
 
-echo "🐱 Go create the repo you want to use for the signing certificates, and come paste the git url here"
-read GIT_URL
+GIT_URL=git@github.com:RokkinCat/apple-certificates.git
 
 cat << MATCHFILE > ./fastlane/Matchfile
 git_url("$GIT_URL")
